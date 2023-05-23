@@ -40,6 +40,19 @@
     justify-content: space-between;
 }
 
+.contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.socials
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .logo-text
 {
     font-size: 15px;

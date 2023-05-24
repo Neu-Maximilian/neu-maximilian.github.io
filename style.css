@@ -4,7 +4,7 @@
 }
 
 :root {
-    background-color: #f4f2b7d7;
+    background-color: #ffffffd7;
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -12,8 +12,54 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    flex: auto;
 }
 
-body {
-    flex:auto;
+.spline-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0.9;
+    color: white;
+    margin: 1em;
+    height: 10%;
+    width: 20%;
+    gap: 6px;
+    border-radius: 12px;
+    background: linear-gradient(rgb(22, 24, 28) 0%, rgb(18, 19, 22) 100%);
+    box-shadow: rgb(6, 7, 9) 0px -2px 0px -1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px inset;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a {
@@ -39,44 +42,54 @@ a {
 
 #M-Logo {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 10em;
+    font-size: max(3.4vw, 3.4vh);
     font-weight: 700;
     color: #333;
     text-shadow: 0 0 1px #333;
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 1vh;
+    left: 1vh;
 }
 
 #N-Logo {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 10em;
+    font-size: max(3.4vw, 3.4vh);
     font-weight: 700;
     color: #333;
     text-shadow: 0 0 1px #333;
     position: fixed;
-    top: 31px;
-    left: 31px;
+    top: 5vh;
+    left: 5vh;
 }
 
 #e-mail {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 10em;
+    font-size: max(2.9vw, 2.9vh);
     font-weight: 700;
     color: #333;
     text-shadow: 0 0 1px #333;
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 1vh;
+    right: 1vh;
+}
+
+#e-mail:hover {
+    color: #000000;
+    text-shadow: 0 0 2px #333;
 }
 
 #phone {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 10em;
+    font-size: max(2.9vw, 2.9vh);
     font-weight: 700;
     color: #333;
     text-shadow: 0 0 1px #333;
     position: fixed;
-    top: 31px;
-    right: 31px;
+    top: 5vh;
+    right: 5vh;
+}
+
+#phone:hover {
+    color: #000000;
+    text-shadow: 0 0 2px #333;
 }

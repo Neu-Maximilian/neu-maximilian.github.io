@@ -2,187 +2,64 @@
 <html>
 
 <head>
-    <title>Terminal Interface</title>
-    <style>
-        :root {
-            --font-size: 3vh;
-        }
-
-        body {
-            font-family: monospace;
-            background-color: black;
-            color: white;
-            font-size: var(--font-size);
-        }
-
-        pre {
-            margin: 0;
-            padding: 0;
-            text-wrap: wrap;
-            overflow-wrap: break-word;
-        }
-
-        #cursor {
-            background-color: white;
-            height: var(--font-size);
-            width: calc(var(--font-size) / 2);
-            display: inline-block;
-            margin-left: calc(var(--font-size) / 4);
-            animation: blink 1s steps(1) infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
+    <title>NEU CLI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.svg" type="image/svg">
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
 </head>
 
 <body>
-    <pre id="terminal"><span id="text">Des</span><div id="cursor"></div></pre>
-
+    <template id="greetings">
+#
+# \ / _ | _ _ ._ _ _
+# \/\/ (/_ | (_ (_) | | | (/_
+#
+# (c) 2023 Maximilian Neu V1.0
+    </template>
     <script>
-        var terminal = document.getElementById('terminal');
-        var text = document.getElementById('text');
-
-        // Simulate a terminal by appending text to the pre element
-        function appendText(textToAppend) {
-            text.innerHTML += textToAppend;
-        }
-
-        // Clear the terminal
-        function clearTerminal() {
-            text.innerHTML = '';
-        }
-
-        // Write a prompt to the terminal
-        function writePrompt() {
-            appendText('> ');
-        }
-
-        // Display a help message
-        function displayHelp() {
-            appendText('Available commands:\n');
-            appendText('  - echo <text>\n');
-            appendText('  - clear\n');
-            appendText('  - help\n');
-            appendText('  - exit\n');
-            appendText('  - ls\n');
-            appendText('  - browser\n');
-        }
-
-        // Display an error message
-        function displayError(message) {
-            // Display the error message in red
-            appendText('<span style="color: red;">' + 'Error: ' + message + '</span> \n');
-        }
-
-        // Echo the user's input
-        function echo(text) {
-            appendText(text + '\n');
-        }
-
-        // exit the terminal
-        function exit() {
-            window.close();
-        }
-
-        // list all the files in the current directory
-        function ls() {
-            appendText('portfolio-2d.html\n');
-            appendText('portfolio-3d.html\n');
-        }
-
-        // open the browser
-        function browser(link) {
-            if (link === 'portfolio-2d.html') {
-                link = 'about/2/home.html';
-            } else if (link === 'portfolio-3d.html') {
-                link = 'about/1/home.html';
-            } else if (!link.match(/^(http|https):\/\/[^ "]+$/)) {
-                displayError('Invalid link: ' + link);
-                return;
-            }
-            appendText('Opening ' + link + '\n');
-            window.open(link);
-        }
-
-        function tabCompletion(input) {
-            var commands = ['echo', 'clear', 'help', 'exit', 'ls', 'browser'];
-            var completion = '';
-            console.log(input);
-            // iterate through the commands and match the first character of each command with the input
-            for (var i = 0; i < commands.length; i++) {
-                if (commands[i][0] === input[0]) {
-                    if (completion === '') {
-                        // add the missing characters to the completion
-                        completion += commands[i].substring(input.length, commands[i].length);
-                    }
-                }
-            }
-            return completion;
-
-        }
-
-        // Initialize the terminal
-        clearTerminal();
-        writePrompt();
-
-        // Add a listener for keyboard input, do not write down special keys
-        document.addEventListener('keydown', function (event) {
-            // If the user presses Enter, append a newline to the terminal
-            if (event.keyCode === 13) {
-                appendText('\n');
-
-                // Get the user's command
-                var command = terminal.innerHTML.substring(terminal.innerHTML.lastIndexOf('&gt;') + 2, terminal.innerHTML.length - 1);
-                // remove 'gt; ' from the command and the last character (the newline)
-                command = command.substring(3, command.lastIndexOf('\n'));
-                console.log(command);
-                // If the user entered the help command, display the help message
-                if (command === 'help') {
-                    displayHelp();
-                } else if (command === 'clear') {
-                    clearTerminal();
-                } else if (command.substring(0, 4) === 'echo') {
-                    echo(command.substring(5, command.length));
-                } else if (command === 'exit') {
-                    exit();
-                } else if (command === 'ls') {
-                    ls();
-                } else if (command.substring(0, 7) === 'browser') {
-                    browser(command.substring(8, command.length));
-                } else if (command.length === 0) { }
-                else {
-                    displayError('Unknown command: ' + command);
-                }
-
-                writePrompt();
-            } else if (event.keyCode === 8) {
-                // If the user presses Backspace, remove the last character from the terminal
-                text.innerHTML = text.innerHTML.substring(0, text.innerHTML.length - 1);
-            } else if (event.keyCode >= 48 && event.keyCode <= 90 || event.keyCode >= 96 && event.keyCode <= 111 || event.keyCode >= 186 && event.keyCode <= 222) {
-                appendText(event.key);
-            } else if (event.keyCode === 32) {
-                appendText(' ');
-            } else if (event.keyCode === 9) {
-                // Tab completion
-                event.preventDefault();
-                // Get the user's last word
-                var input = terminal.innerHTML.substring(terminal.innerHTML.lastIndexOf('&gt;') + 2, terminal.innerHTML.length - 1);
-                // remove 'gt; ' from the input prefix and <... from the input suffix
-                input = input.substring(3, input.indexOf('<'));
-                var completion = tabCompletion(input);
-                console.log(completion);
-                if (completion === undefined) {
-                    return;
+        $('body').terminal({
+            version: function () {
+                this.echo('NEU CLI v1.0.0');
+            },
+            help: function () {
+                this.echo('Available commands are: version, help, about, contact, ls, open, social, clear, exit');
+            },
+            about: function () {
+                this.echo('This is the NEU CLI, a command line interface for my personal website.');
+            },
+            contact: function () {
+                this.echo('You can contact me via email at neu.maximilian@proton.me');
+            },
+            ls: function () {
+                this.echo('portfolio2d.html  portfolio3d.html');
+            },
+            open: function (file) {
+                if (file == 'portfolio2d.html') {
+                    window.location.href = 'about/2/home.html';
+                } else if (file == 'portfolio3d.html') {
+                    window.location.href = 'about/1/home.html';
                 } else {
-                    appendText(completion);
+                    this.echo('File not found.');
                 }
-            }
+            },
+            social: function () {
+                this.echo('You can find me on GitHub at https://github.com/Neu-Maximilian');
+            },
+            clear: function () {
+                this.clear();
+            },
+            exit: function () {
+                this.echo('Goodbye.');
+                this.exit();
+            },
+        }, {
+            greetings: $('#greetings').html(),
+            prompt: 'neu@cli:~$ ',
+            completion: true
         });
-
     </script>
 </body>
 

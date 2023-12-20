@@ -396,11 +396,6 @@ nav {
     margin-top: 3vh;
   }
 
-  .home-image {
-    width: 100%;
-    height: auto;
-  }
-
   /* Contact */
   #contact-label-name {
     grid-column: 1 / 5;

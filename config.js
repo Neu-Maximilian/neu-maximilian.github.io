@@ -390,7 +390,7 @@ const config = {
       },
       {
         title: "Portfolio-SIO",
-        link: "/pages/portfolio-sio",
+        link: "/pages/portfolio-sio/home.html",
         description: {
           en: "My portfolio for my BTS SIO",
           de: "Mein Portfolio für meinen BTS SIO",
@@ -399,7 +399,7 @@ const config = {
       },
       {
         title: "Portfolio-3D",
-        link: "/pages/portfolio-3d",
+        link: "/pages/portfolio-3d/home.html",
         description: {
           en: "My 3D portfolio (Abandoned)",
           de: "Mein 3D-Portfolio (Abandoned)",

@@ -16,7 +16,6 @@ import {
   mediumSolved,
   hardSolved,
 } from "./scripts/fetchStats.js";
-
 import {
   getContributors,
   getIPDetails,

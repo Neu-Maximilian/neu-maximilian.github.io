@@ -36,7 +36,8 @@ import {
 
 const app = document.querySelector("#app");
 let delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-const resumeUrl = "docs/CV 2024 EN.pdf";
+const resumeUrlEN = "docs/CV 2024 EN.pdf";
+const resumeUrlFR = "docs/CV 2024 EN.pdf";
 
 // localisation
 
@@ -57,7 +58,7 @@ let text_credit = "";
 let text_no_expression = "";
 let text_invalid_expression = "";
 let text_contact_me = "";
-let text_network = ["", "", "", "", "", ""]
+let text_network = ["", "", "", "", "", ""];
 
 switch (language) {
   case "fr":
@@ -70,7 +71,14 @@ switch (language) {
     text_no_expression = "Veuillez saisir une expression valide";
     text_invalid_expression = " n'est pas une expression valide";
     text_contact_me = "N'hésitez pas à me contacter";
-    text_network = ["Adresse Ipv6", "Adresse réseau", "Ville", "FAI", "Région", "Code postal"];
+    text_network = [
+      "Adresse Ipv6",
+      "Adresse réseau",
+      "Ville",
+      "FAI",
+      "Région",
+      "Code postal",
+    ];
     break;
   case "de":
     text_flag =
@@ -83,7 +91,14 @@ switch (language) {
     text_no_expression = "Bitte geben Sie einen gültigen Ausdruck ein";
     text_invalid_expression = " ist kein gültiger Ausdruck";
     text_contact_me = "Zögern Sie nicht, mich zu kontaktieren";
-    text_network = ["Ipv6 Adresse", "Netzwerkadresse", "Stadt", "ISP", "Region", "Postleitzahl"];
+    text_network = [
+      "Ipv6 Adresse",
+      "Netzwerkadresse",
+      "Stadt",
+      "ISP",
+      "Region",
+      "Postleitzahl",
+    ];
     break;
   default:
     text_flag = "add '-d' flag for more description";
@@ -95,7 +110,14 @@ switch (language) {
     text_no_expression = "Please Enter a Valid Expression";
     text_invalid_expression = " is not a valid expression";
     text_contact_me = "Do not hesitate to contact me";
-    text_network = ["Ipv6 address", "Network address", "City", "ISP", "Region", "Postal Code"];
+    text_network = [
+      "Ipv6 address",
+      "Network address",
+      "City",
+      "ISP",
+      "Region",
+      "Postal Code",
+    ];
 }
 
 //Defining the functions
@@ -526,7 +548,11 @@ async function createCode(code, text, typingOn = true) {
 
 function downloadFile() {
   let link = document.createElement("a");
-  link.href = resumeUrl;
+  if (language == "fr") {
+    link.href = resumeUrlFR;
+  } else {
+    link.href = resumeUrlEN;
+  }
   link.click();
   const p = document.createElement("p");
   p.innerHTML = "<span class='blink'>###############<span />";

@@ -406,6 +406,15 @@ const config = {
           fr: "Mon portfolio 3D (Abandoned)",
         },
       },
+      {
+        title: "Sandbox",
+        link: "/pages/sandbox/home.html",
+        description: {
+          en: "My sandbox",
+          de: "Mein Sandbox",
+          fr: "Ma sandbox",
+        },
+      }
   ],
   contact: {
     email: "neu.maximilian@proton.me",

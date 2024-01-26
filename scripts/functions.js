@@ -37,7 +37,7 @@ import {
 const app = document.querySelector("#app");
 let delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const resumeUrlEN = "docs/CV 2024 EN.pdf";
-const resumeUrlFR = "docs/CV 2024 EN.pdf";
+const resumeUrlFR = "docs/CV 2024 FR.pdf";
 
 // localisation
 
@@ -106,7 +106,7 @@ switch (language) {
       "write help {command name} to know about specific command like 'help github'";
     text_invalid = "is not a valid command";
     text_alternative = "Are you looking for this: ";
-    text_credit = ["This terminal is made by", "then modified by me."];
+    text_credit = ["This terminal was made by", "then modified by me."];
     text_no_expression = "Please Enter a Valid Expression";
     text_invalid_expression = " is not a valid expression";
     text_contact_me = "Do not hesitate to contact me";
@@ -410,7 +410,7 @@ async function getInputValue(history, remove = false, cmd = undefined) {
       trueValue(value);
       await createText(
         text_credit[0] +
-          ` <a href=""http://github.com/techspiritss" target="_blank">TechSpiritss</a> ` +
+          ` <a href="https://github.com/techspiritss" target="_blank">TechSpiritss</a> ` +
           text_credit[1]
       );
       break;

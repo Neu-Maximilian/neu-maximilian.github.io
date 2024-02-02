@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Accueil</title>
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="icon" href="img/logo.svg" type="image/x-icon" />
     <script src="js/main.js"></script>
-</head>
+  </head>
 
-<body lang="fr">
+  <body lang="fr">
     <header>
-        <nav>
-            <a href="../../../index.html"><img class="nav-logo" src="img/logo.svg" alt="Logo"></a>
-            <ul class="nav-links">
-                <li><a href="" class="nav-link">Accueil</a></li>
-                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
-                <li><a href="pages/projects.html" class="nav-link">Projets</a></li>
-                <li><a href="pages/path.html" class="nav-link">Parcours</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <a href="../../../index.html"
+          ><img class="nav-logo" src="img/logo.svg" alt="Logo"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="" class="nav-link">Accueil</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+          <li><a href="pages/projects.html" class="nav-link">Projets</a></li>
+          <li><a href="pages/path.html" class="nav-link">Parcours</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <h1 class="main-title">Maximilian NEU, 19</h1>
-        <hr class="main-bar">
-        <section class="home-section">
-            <img class="home-image" src="img/IMG_PORTRAIT.png" alt="Photo de profil">
-            <p class="home-text">Je suis étudiant informatique sur le Haut-Rhin. J'ai obtenu un baccalauréat général en
-                2022, puis j'ai
-                intégré une licence informatique à l'Université de Haute-Alsace. En 2023, j'ai décidé de me réorienter
-                vers une formation plus professionnalisante et j'ai intégré le BTS SIO (Services Informatiques aux
-                Organisations) en alternance au CCI Campus et aux HCC de Colmar.<br>
-                Au cours de ma formation, j'ai acquis des compétences techniques en informatique, notamment en
-                développement logiciel, en administration système et réseau, et en gestion de bases de données. J'ai
-                également développé des compétences en communication, en travail en équipe et en résolution de
-                problèmes.<br>
-                Je suis actuellement en deuxième année de BTS SIO. J'occupe le poste de technicien informatique et j'ai
-                l'opportunité de travailler sur des projets variés.
-                Je suis passionné par l'informatique et je souhaite poursuivre ma carrière dans ce domaine. Je suis
-                ouvert à toutes les opportunités, que ce soit en tant que développeur, administrateur système ou
-                consultant.<br>
-                Je ne suis pas à la recherche d'un emploi en ce moment, car je souhaite me concentrer sur ma formation
-                et mon alternance. Cependant, je suis toujours à l'écoute de nouvelles opportunités et je serais heureux
-                de discuter de mon profil avec des recruteurs.</p>
-        </section>
+      <h1 class="main-title">Maximilian NEU, 19</h1>
+      <hr class="main-bar" />
+      <section class="home-section">
+        <img
+          class="home-image"
+          src="img/IMG_PORTRAIT.png"
+          alt="Photo de profil"
+        />
+        <div class="home-resume">
+          <div class="home-skills">
+            <span class="home-tag">tcp/udp</span>
+            <span class="home-tag">dns</span>
+            <span class="home-tag">firewall</span>
+            <span class="home-tag">ssh</span>
+            <span class="home-tag">Linux</span>
+            <span class="home-tag">Windows</span>
+            <span class="home-tag">docker</span>
+            <span class="home-tag">git</span>
+            <span class="home-tag">rust</span>
+            <span class="home-tag">scripting</span>
+            <!-- Add more tags as needed -->
+          </div>
+          <p class="home-text">
+            Étudiant en informatique passionné, j'ai obtenu un baccalauréat
+            général en 2022 avant de m'orienter vers un BTS SIO en alternance au
+            CCI Campus et aux HCC de Colmar. Ma formation m'a permis d'acquérir
+            des compétences techniques en développement logiciel, administration
+            système et réseau, et gestion de bases de données, ainsi que des
+            aptitudes en communication, travail en équipe et résolution de
+            problèmes. <br />
+            Actuellement en deuxième année, j'occupe un poste de technicien
+            informatique et travaille sur des projets variés. Je suis ouvert à
+            toutes opportunités dans le domaine de l'informatique, que ce soit
+            en tant que développeur, administrateur système ou consultant.
+            Souhaitant me concentrer sur ma formation et mon alternance, je ne
+            suis pas à la recherche d'un emploi actuellement, mais je reste à
+            l'écoute de nouvelles opportunités et serais heureux de discuter de
+            mon profil avec des recruteurs.
+          </p>
+        </div>
+      </section>
+      <canvas id="game-of-life-banner"></canvas>
+      <script src="js/game-of-life.js"></script>
     </main>
     <footer>
-        <div class="footer-legal">
-            <span>©2023</span>
-            <span><a href="pages/legal.html">Mentions Légales</a></span>
-        </div>
+      <div class="footer-legal">
+        <span>©2023</span>
+        <span><a href="pages/legal.html">Mentions Légales</a></span>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

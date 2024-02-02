@@ -213,6 +213,31 @@ nav {
   margin-bottom: 50px;
 }
 
+.home-skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  gap: 1vw;
+}
+
+.home-tag{
+  padding: 1vw;
+  background-color: var(--accent-color);
+  border: var(--accent-color);
+  border-radius: 2em;
+}
+
+#game-of-life-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /* LEGAL PAGE STYLES */
 
 .legal-section {

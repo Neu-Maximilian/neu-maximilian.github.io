@@ -176,8 +176,8 @@ document.addEventListener("mousemove", function (event) {
 
 // Ajouter plusieurs cellules vivantes multicolores après un clic
 document.addEventListener("click", function (event) {
-  let x = Math.floor(event.clientX / cellSize);
-  let y = Math.floor(event.clientY / cellSize);
+  let x = Math.floor(event.pageX / cellSize);
+  let y = Math.floor(event.pageY / cellSize);
   // Sous forme de cercle (non rempli)
   for (let i = -3; i < 4; i++) {
     for (let j = -3; j < 4; j++) {

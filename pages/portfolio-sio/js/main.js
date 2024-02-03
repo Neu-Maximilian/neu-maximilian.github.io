@@ -19,7 +19,7 @@ function checkWindowSize() {
       // On change le contenu du bouton
       if (navLinks.classList.contains("hide")) {
         burgerMenu.textContent = "☰";
-        navLinks.style.height = "0px"; // Set to collapsed height
+        navLinks.style.height = "0vh"; // Set to collapsed height
       } else {
         burgerMenu.textContent = "✖";
         navLinks.style.height = "auto"; // Set to expanded height

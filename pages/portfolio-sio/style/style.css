@@ -71,33 +71,6 @@ h2 {
   visibility: hidden;
 }
 
-nav {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-}
-
-.nav-logo {
-  height: 60px;
-  width: 60px;
-  animation: rotate 20s ease-in-out infinite;
-}
-
-.nav-link {
-  font-family: IBM Plex Serif;
-  font-size: var(--font-size-nav-link);
-  font-weight: 400;
-  color: black;
-  margin-right: 1vw;
-}
-
-.nav-link:hover {
-  color: white;
-  transition: 0.5s ease;
-}
-
-.nav-link:active {
-  color: var(--accent-color);
-}
-
 p {
   font-family: IBM Plex Sans;
   font-size: var(--font-size-p);
@@ -152,6 +125,8 @@ nav {
   padding: 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
@@ -161,6 +136,29 @@ nav {
   justify-content: space-around;
   margin-left: 1vw;
   padding: 1.3vh;
+}
+
+.nav-logo {
+  height: 60px;
+  width: 60px;
+  animation: rotate 20s ease-in-out infinite;
+}
+
+.nav-link {
+  font-family: IBM Plex Serif;
+  font-size: var(--font-size-nav-link);
+  font-weight: 400;
+  color: black;
+  margin-right: 1vw;
+}
+
+.nav-link:hover {
+  color: white;
+  transition: 0.5s ease;
+}
+
+.nav-link:active {
+  color: var(--accent-color);
 }
 
 .main-title {
@@ -178,8 +176,8 @@ nav {
   background-color: var(--bg-color-3);
   border: #000 solid 2px;
   border-top-left-radius: 30px;
-  height: 7vh;
-  width: max(14vw, 14vh);
+  height: 4vh;
+  width: calc(7vh * 4);
 }
 
 .main-bar {
@@ -210,6 +208,7 @@ nav {
   width: 351px;
   height: 394px;
   flex-shrink: 0;
+  border-radius: 40px;
 }
 
 .home-text {
@@ -463,18 +462,18 @@ nav {
 /* MOBILE OVERWRITES */
 
 @media screen and (max-width: 1000px) {
-  :root {
+  /* :root {
     --font-size-h1: 4rem;
     --font-size-h2: 3.5rem;
     --font-size-nav-link: 3rem;
     --font-size-p: 2rem;
     --font-size-span: 1.5rem;
-  }
-
+  } */
+  /* 
   .nav-logo {
     height: 100px;
     width: 100px;
-  }
+  } */
 
   /* HOME */
   .home-section {
@@ -540,25 +539,24 @@ nav {
   }
 
   /* PROJECTS */
-  .projects-card {
+  /* .projects-card {
     min-width: 800px;
     min-height: 1200px;
   }
 
   .projects-image {
     width: 700px;
-  }
+  } */
 
   /* PATH */
   .path-content {
-    width: 70vw;
-    height: 10vh;
+    width: 60vw;
+    height: auto;
   }
 
   .path-content::after {
-    right: -4em;
-    border-width: 5vh 0 5vh 4em;
-    border-color: transparent transparent transparent var(--accent-color);
+    right: -2em;
+    border-width: 2em 0 2em 2em;
   }
 
   /* Burger Menu */
@@ -573,5 +571,7 @@ nav {
   .nav-links {
     flex-direction: column;
     gap: 1vh;
+    width: 100vh;
+    order: 2;
   }
 }

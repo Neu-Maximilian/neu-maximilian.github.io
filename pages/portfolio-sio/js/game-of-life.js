@@ -3,11 +3,25 @@ let canvas = document.getElementById("game-of-life-banner");
 let context = canvas.getContext("2d");
 
 // Définir la taille du canvas pour qu'il s'adapte à l'écran
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = document.body.scrollWidth;
+canvas.height = document.body.scrollHeight;
+// Si la taille de l'écran est plus grande que celle du body, on prend la taille de l'écran
+if (canvas.width < window.innerWidth || canvas.height < window.innerHeight) {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+// Redimensionner le canvas si la taille de l'écran change
+window.addEventListener("resize", function () {
+  canvas.width = document.body.scrollWidth;
+  canvas.height = document.body.scrollHeight;
+  if (canvas.width < window.innerWidth || canvas.height < window.innerHeight) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+});
 
 // Définir la taille du plateau de jeu en fonction de la taille du canvas
-let cellSize = 10; // Vous pouvez ajuster cette valeur
+let cellSize = 5;
 let cols = Math.floor(canvas.width / cellSize);
 let rows = Math.floor(canvas.height / cellSize);
 
@@ -38,9 +52,9 @@ function draw() {
           window.matchMedia &&
           window.matchMedia("(prefers-color-scheme: dark)").matches
         ) {
-          context.fillStyle = "gray";
+          context.fillStyle = "#5b5b5c";
         } else {
-          context.fillStyle = "lightgray";
+          context.fillStyle = "#e4e3e6";
         }
         context.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
       }
@@ -95,10 +109,15 @@ window.onload = function () {
   }, 100);
 };
 
-window.addEventListener("resize", function () {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  cols = Math.floor(canvas.width / cellSize);
-  rows = Math.floor(canvas.height / cellSize);
-  init();
+// Ajouter plusieurs cellules vivantes autour du curseur de la souris
+canvas.addEventListener("mousemove", function (event) {
+  let x = Math.floor(event.clientX / cellSize);
+  let y = Math.floor(event.clientY / cellSize);
+  for (let i = -2; i < 3; i++) {
+    for (let j = -2; j < 3; j++) {
+      if (Math.random() > 0.5) {
+        board[(x + i + cols) % cols][(y + j + rows) % rows] = 1;
+      }
+    }
+  }
 });

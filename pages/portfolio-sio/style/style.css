@@ -71,6 +71,10 @@ h2 {
   visibility: hidden;
 }
 
+nav {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
 .nav-logo {
   height: 60px;
   width: 60px;
@@ -224,7 +228,7 @@ nav {
   gap: 1vw;
 }
 
-.home-tag{
+.home-tag {
   padding: 1vw;
   background-color: var(--accent-color);
   border: var(--accent-color);
@@ -561,14 +565,13 @@ nav {
   .burger-menu {
     background-color: transparent;
     width: 10vh;
-    height: 5vh;
     border: none;
     font-size: var(--font-size-h1);
-    align-self: center;
     margin-left: auto;
   }
 
   .nav-links {
     flex-direction: column;
+    gap: 1vh;
   }
 }

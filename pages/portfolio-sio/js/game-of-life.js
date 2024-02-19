@@ -6,8 +6,7 @@ let context = canvas.getContext("2d");
 canvas.width = document.body.scrollWidth;
 canvas.height = document.body.scrollHeight;
 // Si la taille de l'écran est plus grande que celle du body, on prend la taille de l'écran
-if (canvas.width < window.innerWidth || canvas.height < window.innerHeight) {
-  canvas.width = window.innerWidth;
+if (canvas.height < window.innerHeight) {
   canvas.height = window.innerHeight;
 }
 // Redimensionner le canvas si la taille de l'écran change

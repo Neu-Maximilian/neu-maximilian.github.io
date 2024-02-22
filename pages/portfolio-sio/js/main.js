@@ -44,3 +44,5 @@ function checkWindowSize() {
 
 window.addEventListener("load", checkWindowSize);
 window.addEventListener("resize", checkWindowSize);
+window.addEventListener("orientationchange", checkWindowSize);
+window.addEventListener("DOMContentLoaded", checkWindowSize);

@@ -44,5 +44,5 @@ function checkWindowSize() {
   }
 }
 
-window.addEventListener("load", checkWindowSize);
+window.addEventListener("DOMContentLoaded", checkWindowSize);
 window.addEventListener("resize", checkWindowSize);

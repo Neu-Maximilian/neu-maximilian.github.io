@@ -16,20 +16,18 @@ function checkWindowSize() {
     const nav = document.querySelector("nav");
     nav.appendChild(burgerMenu);
     // On ajoute un event listener sur le bouton
-    if (document.querySelector(".burger-menu")) {
-      burgerMenu.addEventListener("click", function () {
-        // On affiche ou cache le menu
-        navLinks.classList.toggle("hide");
-        // On change le contenu du bouton
-        if (navLinks.classList.contains("hide")) {
-          burgerMenu.textContent = "☰";
-          navLinks.style.height = "0vh";
-        } else {
-          burgerMenu.textContent = "✖";
-          navLinks.style.height = "auto";
-        }
-      });
-    }
+    burgerMenu.onclick = function () {
+      // On affiche ou cache le menu
+      navLinks.classList.toggle("hide");
+      // On change le contenu du bouton
+      if (navLinks.classList.contains("hide")) {
+        burgerMenu.textContent = "☰";
+        navLinks.style.height = "0vh";
+      } else {
+        burgerMenu.textContent = "✖";
+        navLinks.style.height = "auto";
+      }
+    };
   }
   // Si la largeur de la fenetre est superieur à 1000px
   else {

@@ -3,24 +3,11 @@
 //Imports done
 import config from "../config.js";
 import {
-  fetchGithubSocialStats,
-  fetchLinkedInStats,
-  fetchLeetCodeStats,
-  fetchGithubStats,
-  connections,
   githubStats,
   followers,
   following,
-  ranking,
-  totalSolved,
-  easySolved,
-  mediumSolved,
-  hardSolved,
 } from "./fetchStats.js";
 import {
-  getContributors,
-  getIPDetails,
-  getRepo,
   contributors,
   IpDetails,
   userRepos,
@@ -30,7 +17,6 @@ import {
   commandHistory,
   saveHistory,
   clearHistory,
-  popInvalidCommand,
   runSpecificHistoryCmd,
 } from "./history.js";
 

@@ -3,39 +3,17 @@
 import { greenBtn, yellowBtn, redBtn, themeBtn } from "./scripts/buttons.js";
 import {
   fetchGithubSocialStats,
-  fetchLinkedInStats,
-  fetchLeetCodeStats,
   fetchGithubStats,
-  connections,
-  githubStats,
-  followers,
-  following,
-  ranking,
-  totalSolved,
-  easySolved,
-  mediumSolved,
-  hardSolved,
 } from "./scripts/fetchStats.js";
 import {
   getContributors,
   getIPDetails,
   getRepo,
-  contributors,
-  IpDetails,
-  userRepos,
 } from "./scripts/getDetails.js";
 import {
-  neofetch,
-  removeNeoFetch,
-  getInputValue,
   new_line,
-  removeInput,
-  trueValue,
-  falseValue,
   createText,
   createCode,
-  downloadFile,
-  calc,
 } from "./scripts/functions.js";
 
 import { setTheme } from "./scripts/themeSetter.js";
@@ -65,9 +43,6 @@ export let commandsList = [
 ];
 
 let delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const app = document.querySelector("#app");
-const bodyContainer = document.querySelector("#bodyContainer");
 
 const greenButton = document.querySelector("#greenButton");
 greenButton.addEventListener("click", greenBtn);
@@ -140,8 +115,6 @@ function localize() {
 
 //fetch statisticss from ./scripts/fetchStats.js
 fetchGithubSocialStats();
-fetchLinkedInStats();
-fetchLeetCodeStats();
 fetchGithubStats();
 
 //localize the website

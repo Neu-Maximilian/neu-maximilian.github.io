@@ -8,48 +8,42 @@
   <br />
   <br />
   
-  <img src="./public/readme-images/moj.png" />
+  <h2 align="center">Maximilian NEU - Portfolio personnel</h2>
 
-  <h2 align="center">Muhammad Osama Javaid - Personal portfolio</h2>
+  Ce site web est un portfolio personnel entièrement responsive, <br />Adapté à tous les appareils, construit uniquement avec Nextjs et TailwindCSS. Il est basé sur le portfolio de Muhammad Osama Javaid, mais personnalisé par mes soins.
 
-This website is fully responsive personal portfolio, <br />Responsive for all devices, built using Nextjs, TailwindCSS only.
+  <a href="https://neu-maximilian.github.io/"><strong>➥ Démo en ligne</strong></a>
 
-<a href="https://osamajavaid.vercel.app/"><strong>➥ Live Demo</strong></a>
+  </div>
 
-</div>
+  <br />
 
-<br />
+  ### Prérequis
 
-### Demo Screeshots
+  Avant de commencer, assurez-vous de répondre aux exigences suivantes :
 
-![Osama Portfolio Desktop Demo](./public/readme-images/portfolio.png "Desktop Demo")
+  - [Git](https://git-scm.com/downloads "Télécharger Git") doit être installé sur votre système d'exploitation.
 
-### Prerequisites
+  ### Exécuter localement
 
-Before you begin, ensure you have met the following requirements:
+  Pour exécuter **portfolio** localement, exécutez cette commande dans votre terminal Git :
 
-- [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+  Linux et macOS :
 
-### Run Locally
+  ```bash
+  sudo git clone https://github.com/neu-maximilian/neu-maximilian.github.io.git
+  ```
 
-To run **portfolio** locally, run this command on your git bash:
+  Windows :
 
-Linux and macOS:
+  ```bash
+  git clone https://github.com/neu-maximilian/neu-maximilian.github.io.git
+  ```
 
-```bash
-sudo git clone https://github.com/osamajavaid/portfolio.git
-```
+  ### Contact
 
-Windows:
+  Si vous souhaitez me contacter, vous pouvez me joindre sur [X](https://www.x.com/iosamajavaid).
 
-```bash
-git clone https://github.com/osamajavaid/portfolio.git
-```
+  ### Licence
 
-### Contact
-
-If you want to contact with me you can reach me at [X](https://www.x.com/iosamajavaid).
-
-### License
-
-This project is **free to use** and does not contains any license.
+  Ce projet est **gratuit à utiliser** et ne contient aucune licence.

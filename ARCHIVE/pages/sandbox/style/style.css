@@ -1,0 +1,12 @@
+@keyframes spin-rotate {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+  }
+}
+
+.custom-animation {
+  animation: spin-rotate 5s linear infinite;
+}

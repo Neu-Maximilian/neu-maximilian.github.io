@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en fr de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- HTML Meta Tags -->
+    <title>Terminal</title>
+    <meta
+      name="description"
+      content="Terminal Style Portfolio made with HTML / CSS / JS"
+    />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+    <script
+      src="https://kit.fontawesome.com/1eb44e0a35.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap"
+    />
+
+    <script type="module" src="./script.js" defer></script>
+    <script type="module" src="./scripts/eventListeners.js" defer></script>
+    <title>Terminal</title>
+    <link rel="icon" type="image/jpg" href="logo.svg" />
+    <link rel="stylesheet" id="switcher-id" href="" />
+  </head>
+
+  <body id="bodyContainer">
+    <div id="screenContainer" class="container">
+      <div class="menu">
+        <div class="buttons-flex">
+          <div id="redButton" class="button red"></div>
+          <div id="yellowButton" class="button yellow"></div>
+          <div id="greenButton" class="button green"></div>
+        </div>
+        <div class="title">
+            <h1 id="terminal-title"></h1>
+        </div>
+        <div class="theme-dropdown" id="themeButton">
+          Themes <span class="close hide">X</span>
+        </div>
+        <div class="theme-switches hide">
+          <div class="theme-group">
+            <h3 id="theme-light-label">Light Mode Themes</h3>
+            <div class="main-switch theme-options" data-theme="beige">
+              <div class="switch" id="switch5"></div>
+              Beige
+            </div>
+            <div class="main-switch theme-options" data-theme="nature">
+              <div class="switch" id="switch1"></div>
+              Nature
+            </div>
+            <div class="main-switch theme-options" data-theme="sky">
+              <div class="switch" id="switch4"></div>
+              Sky
+            </div>
+          </div>
+          <div class="theme-group">
+            <h3 id="theme-dark-label" >Dark Mode Themes</h3>
+            <div class="main-switch theme-options" data-theme="matrix">
+              <div class="switch" id="switch3"></div>
+              Matrix
+            </div>
+            <div class="main-switch theme-options" data-theme="metalic">
+              <div class="switch" id="switch2"></div>
+              Metallic
+            </div>
+            <div class="main-switch theme-options" data-theme="dracula">
+              <div class="switch" id="switch6"></div>
+              Dracula
+            </div>
+          </div>
+          <div class="theme-group">
+            <h3 id="theme-vibrant-label">Vibrant Mode Themes</h3>
+            <div class="main-switch theme-options" data-theme="vibrant">
+              <div class="switch" id="switch7"></div>
+              Vibrant
+            </div>
+            <div class="main-switch theme-options" data-theme="galaxy">
+              <div class="switch" id="switch8"></div>
+              Galaxy
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="app"></div>
+      <div class="title">
+        <div class="bottom-bar">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          <a
+            href="https://www.linkedin.com/in/neu-maximilian"
+            target="_blank"
+            rel="noopener noreferrer nofollow external noindex"
+            class="bottom-name"
+          >
+            Maximilian NEU</a
+          >
+          <div class="blink-dot"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
